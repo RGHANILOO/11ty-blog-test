@@ -1,0 +1,50 @@
+# Name of the action:
+name: Deploy to GitHub Pages
+
+# When should it trigger?
+on:
+  # Trigger when something is pushed to the branch main
+  push:
+    branches:
+      - main
+  # Make it possible to trigger manually, useful for debugging
+  workflow_dispatch:
+
+# What should be done
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install pnpm
+        run: npm install -g pnpm
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Cache pnpm
+        uses: actions/cache@v3
+        with:
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
+
+      - name: Build with 11ty
+        run: pnpm build-ghpages
+
+      # Deploy the content of _site to the branch gh-pages (default setting)
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v4
+        if: github.ref == 'refs/heads/main'
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
