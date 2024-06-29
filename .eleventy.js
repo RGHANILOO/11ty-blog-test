@@ -1,12 +1,9 @@
 import markdownIt from "markdown-it";
 import { DateTime } from "luxon";
 import { EleventyHtmlBasePlugin } from "@11ty/eleventy";
-
+import slugify from "slugify";
 
 export default function (eleventyConfig) {
-
-  
-
   // eleventyConfig.addPlugin(InputPathToUrlTransformPlugin);
   // Configure Markdown-It
   let options = {
@@ -27,8 +24,15 @@ export default function (eleventyConfig) {
   });
 
   // add html base plugin
-  eleventyConfig.addPlugin(EleventyHtmlBasePlugin)
-  
+  eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
+  // Add a slug filter
+  eleventyConfig.addNunjucksFilter("slug", (str) => {
+    return slugify(str, {
+      lower: true,
+      replacement: "-",
+      remove: /[*+~.()'"!:@]/g,
+    });
+  });
 
   return {
     dir: {

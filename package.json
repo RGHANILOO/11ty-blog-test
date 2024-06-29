@@ -16,9 +16,11 @@
   "license": "ISC",
   "dependencies": {
     "@11ty/eleventy": "3.0.0-alpha.14",
+    "@sindresorhus/slugify": "^2.2.1",
     "chokidar": "^3.6.0",
     "luxon": "^3.4.4",
     "markdown-it": "^14.1.0",
-    "nunjucks": "^3.2.4"
+    "nunjucks": "^3.2.4",
+    "slugify": "^1.6.6"
   }
 }

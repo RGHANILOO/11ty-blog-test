@@ -8,6 +8,9 @@ dependencies:
   '@11ty/eleventy':
     specifier: 3.0.0-alpha.14
     version: 3.0.0-alpha.14
+  '@sindresorhus/slugify':
+    specifier: ^2.2.1
+    version: 2.2.1
   chokidar:
     specifier: ^3.6.0
     version: 3.6.0
@@ -20,6 +23,9 @@ dependencies:
   nunjucks:
     specifier: ^3.2.4
     version: 3.2.4(chokidar@3.6.0)
+  slugify:
+    specifier: ^1.6.6
+    version: 1.6.6
 
 packages:
 
@@ -882,10 +888,6 @@ packages:
       minimist: 1.2.8
     dev: false
 
-  /moment@2.30.1:
-    resolution: {integrity: sha512-uEmtNhbDOrWPFS+hdjFCBfy9f2YoyzRpwcl+DqpC6taX21FzsTLQVbMV/W7PzNSX6x/bhC1zA3c2UQ5NzH6how==}
-    dev: false
-
   /moo@0.5.2:
     resolution: {integrity: sha512-iSAJLHYKnX41mKcJKjqvnAN9sf0LMDTXDEvFv+ffuRR9a1MIuXLjMNL6EsnDHSkKLTWNqQQ5uo61P4EbU4NU+Q==}
     dev: false
@@ -927,7 +929,6 @@ packages:
     resolution: {integrity: sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA==}
     engines: {node: '>=0.10.0'}
     dev: false
-
 
   /nunjucks@3.2.4(chokidar@3.6.0):
     resolution: {integrity: sha512-26XRV6BhkgK0VOxfbU5cQI+ICFUtMLixv1noZn1tGU38kQH5A5nmmbk/O45xdyBhD1esk47nKrY0mvQpZIhRjQ==}
