@@ -1,6 +1,6 @@
 ---
 title: "Mythird post"
-layout: "layout.njk"
+layout: "posts.njk"
 date: 2024-06-30
 ---
 
