@@ -1,38 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ title }}</title>
-    {# <link rel="stylesheet" href="./CSS/styles.css"> <!-- Assuming you have a CSS file --> #}
-</head>
-<body>
+    {#
+    <link rel="stylesheet" href="./CSS/styles.css" />
+    <!-- Assuming you have a CSS file -->
+    #}
+  </head>
+  <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/about/">About</a></li>
-                <li><a href="/projects/">Projects</a></li>
-                <li><a href="/blog/">Blog</a></li>
-            </ul>
-        </nav>
+      <nav>
+        <ul>
+          <li><a href="{{ '/' }}">Home</a></li>
+          <li><a href="{{ '/' }}about/">About</a></li>
+          <li><a href="{{ '/' }}projects/">Projects</a></li>
+          <li><a href="{{ '/' }}blog/">Blog</a></li>
+        </ul>
+      </nav>
     </header>
     <main>
-        <article>
-            <h1>{{ title }}</h1>
-            <p>{{ date | postDate }}</p>
-            {{ content | safe }}
-        </article>
+      <article>
+        <h1>{{ title }}</h1>
+        <p>{{ date | postDate }}</p>
+        {{ content | safe }}
+      </article>
     </main>
     <footer>
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/about/">About</a></li>
-            <li><a href="/projects/">Projects</a></li>
-            <li><a href="/blog/">Blog</a></li>
-            <li><a href="/sitemap.xml">Sitemap</a></li>
-        </ul>
-        <p>&copy; {{ date | postDate }}</p>
+      <ul>
+        <li><a href="{{ '/' }}">Home</a></li>
+        <li><a href="{{ '/' }}about/">About</a></li>
+        <li><a href="{{ '/' }}projects/">Projects</a></li>
+        <li><a href="{{ '/' }}blog/">Blog</a></li>
+        <li><a href="{{ '/' }}sitemap.xml">Sitemap</a></li>
+      </ul>
+      <p>&copy; {{ date | postDate }}</p>
     </footer>
-</body>
+  </body>
 </html>
