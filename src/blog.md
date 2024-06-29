@@ -1,8 +1,8 @@
 ---
-title: "Home"
+title: "Blog"
 layout: "layout.njk"
 ---
-# Welcome to My Site
+# Blog
 
 ## Latest Posts
 
