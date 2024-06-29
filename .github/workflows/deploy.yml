@@ -39,7 +39,7 @@ jobs:
           key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
 
       - name: Build with 11ty
-        run: pnpm npx @11ty/eleventy
+        run: pnpm build-ghpages
 
       # Deploy the content of _site to the branch gh-pages (default setting)
       - name: Deploy

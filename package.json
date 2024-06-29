@@ -7,6 +7,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npx @11ty/eleventy",
+    "build-ghpages": "npx @11ty/eleventy --pathprefix=/11ty-blog-test/",
     "serve": "npx @11ty/eleventy --serve",
     "debug": "Eleventy* npx @11ty/elevent --serve"
   },

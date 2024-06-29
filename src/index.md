@@ -4,8 +4,4 @@ layout: "layout.njk"
 ---
 # Welcome to My Site
 
-## Latest Posts
-
-{% for post in collections.posts %}
-  - [{{ post.data.title }}]({{ post.url | url }}) - {{ post.date | postDate }}
-{% endfor %}
+## havea look around and poke at things
