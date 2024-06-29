@@ -7,5 +7,5 @@ layout: "layout.njk"
 ## Latest Posts
 
 {% for post in collections.posts %}
-  - [{{ post.data.title }}]({{ post.url }}) - {{ post.date | date("DD MMMM YYYY") }}
+  - [{{ post.data.title }}]({{ post.url | url }}) - {{ post.date | date("DD MMMM YYYY") }}
 {% endfor %}
